@@ -152,6 +152,7 @@
     </div>
 
     <button type="button" onclick="calculateScore()">Submit</button>
+    <button type="button" onclick="resetForm()">Clear</button>
 </form>
 
 <p id="result"></p>
@@ -192,6 +193,10 @@ function calculateScore() {
 
     document.getElementById('result').innerText = "ADL Total Score: " + sum;
     document.getElementById('result').scrollIntoView({behavior: "smooth"});
+}
+
+function resetForm() {
+    location.reload();
 }
 </script>
 
