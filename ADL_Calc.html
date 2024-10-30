@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Score Survey</title>
+</head>
+<body>
+  <h1>Survey</h1>
+  <form id="surveyForm">
+    <div>
+      <label>Hi Diane, are you feeling better today?</label><br>
+      <input type="radio" name="q1" value="1"> Good<br>
+      <input type="radio" name="q1" value="2"> Great<br>
+      <input type="radio" name="q1" value="3"> Terrible<br>
+    </div>
+    <button type="button" onclick="calculateScore()">Submit</button>
+  </form>
+  <h2 id="scoreDisplay"></h2>
+  
+  <script>
+    function calculateScore() {
+      const form = document.getElementById('surveyForm');
+      let score = 0;
+      const question = form.elements['q1'];
+      for (const option of question) {
+        if (option.checked) score += parseInt(option.value);
+      }
+      let message = "Your score: " + score;
+      if (score === 1) message += " - You had a Good day!";
+      else if (score === 2) message += " - You had a Great day!";
+      else if (score === 3) message += " - It was a Terrible day!";
+      document.getElementById('scoreDisplay').textContent = message;
+    }
+  </script>
+</body>
+</html>
