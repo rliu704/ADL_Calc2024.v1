@@ -10,6 +10,25 @@
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
+        .result-container {
+            margin-top: 20px;
+        }
+        .responses-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .responses-list li {
+            margin: 10px 0;
+        }
+        .question-text {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .response-text {
+            display: inline-block;
+            margin-left: 20px;
+        }
     </style>
 </head>
 <body>
@@ -155,9 +174,24 @@
     <button type="button" onclick="resetForm()">Clear</button>
 </form>
 
-<p id="result"></p>
+<div id="result" class="result-container"></div>
+<div id="responses"></div>
 
 <script>
+const questionsText = {
+    q1: "Eating",
+    q2: "Oral hygiene",
+    q3: "Toileting hygiene",
+    q4: "Roll left and right",
+    q5: "Lying to sitting on side of bed",
+    q6: "Sit to stand",
+    q7: "Chair/bed-to-chair transfer",
+    q8: "Toilet transfer",
+    q9: "Walk 10 feet",
+    q10: "Walk 50 feet with two turns",
+    q11: "Wheel 50 feet with two turns (x2)"
+};
+
 function calculateScore() {
     const questionnaire = document.getElementById('questionnaire');
     let sum = 0;
@@ -193,7 +227,26 @@ function calculateScore() {
     }
 
     document.getElementById('result').innerText = "ADL Total Score: " + sum;
-    document.getElementById('result').scrollIntoView({behavior: "smooth"});
+    displayResponses(); // Display the chosen responses
+}
+
+function displayResponses() {
+    const questionnaire = document.getElementById('questionnaire');
+    let responsesHTML = "<h3>Chosen Responses:</h3><ul class='responses-list'>";
+
+    // Iterate through each question and display selected response with question text
+    for (let i = 1; i <= 11; i++) {
+        let questionKey = "q" + i;
+        let selectedOption = Array.from(questionnaire[questionKey]).find(option => option.checked);
+
+        if (selectedOption) {
+            responsesHTML += `<li><span class="question-text">Question ${i}: ${questionsText[questionKey]}</span> <span class="response-text">- ${selectedOption.nextSibling.textContent.trim()}</span></li>`;
+        }
+    }
+
+    responsesHTML += "</ul>";
+    document.getElementById('responses').innerHTML = responsesHTML;
+    document.getElementById('responses').scrollIntoView({behavior: "smooth"});
 }
 
 function resetForm() {
