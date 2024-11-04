@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Abilities Assessment</title>
+    <style>
+        .question-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .result-container, .sms-container {
+            margin-top: 20px;
+        }
+        .responses-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .responses-list li {
+            margin: 10px 0;
+        }
+        .question-text {
+            font-weight: bold;
+            display: inline-block;
+            min-width: 250px;
+        }
+        .response-text {
+            display: inline-block;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Functional Abilities Assessment</h1>
+
+<form id="questionnaire">
+    <label for="residentDate">Resident/Date (optional):</label>
+    <input type="text" id="residentDate" name="residentDate" style="display: block; margin-bottom: 20px;">
+    
+    <div class="question-container">
+        <!-- Questions 1 to 11 -->
+        <div>
+            <h3>1. Eating</h3>
+            <input type="radio" name="q1" value="6"> Independent (6)<br>
+            <input type="radio" name="q1" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q1" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q1" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q1" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q1" value="1"> Dep (1)<br>
+            <input type="radio" name="q1" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>2. Oral hygiene</h3>
+            <input type="radio" name="q2" value="6"> Independent (6)<br>
+            <input type="radio" name="q2" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q2" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q2" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q2" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q2" value="1"> Dep (1)<br>
+            <input type="radio" name="q2" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>3. Toileting hygiene</h3>
+            <input type="radio" name="q3" value="6"> Independent (6)<br>
+            <input type="radio" name="q3" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q3" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q3" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q3" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q3" value="1"> Dep (1)<br>
+            <input type="radio" name="q3" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>4. Roll left and right</h3>
+            <input type="radio" name="q4" value="6"> Independent (6)<br>
+            <input type="radio" name="q4" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q4" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q4" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q4" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q4" value="1"> Dep (1)<br>
+            <input type="radio" name="q4" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>5. Lying to sitting on side of bed</h3>
+            <input type="radio" name="q5" value="6"> Independent (6)<br>
+            <input type="radio" name="q5" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q5" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q5" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q5" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q5" value="1"> Dep (1)<br>
+            <input type="radio" name="q5" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>6. Sit to stand</h3>
+            <input type="radio" name="q6" value="6"> Independent (6)<br>
+            <input type="radio" name="q6" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q6" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q6" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q6" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q6" value="1"> Dep (1)<br>
+            <input type="radio" name="q6" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>7. Chair/bed-to-chair transfer</h3>
+            <input type="radio" name="q7" value="6"> Independent (6)<br>
+            <input type="radio" name="q7" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q7" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q7" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q7" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q7" value="1"> Dep (1)<br>
+            <input type="radio" name="q7" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>8. Toilet transfer</h3>
+            <input type="radio" name="q8" value="6"> Independent (6)<br>
+            <input type="radio" name="q8" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q8" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q8" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q8" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q8" value="1"> Dep (1)<br>
+            <input type="radio" name="q8" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>9. Walk 10 feet</h3>
+            <input type="radio" name="q9" value="6"> Independent (6)<br>
+            <input type="radio" name="q9" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q9" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q9" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q9" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q9" value="1"> Dep (1)<br>
+            <input type="radio" name="q9" value="1" id="q9_dcsame"> *Use if D/C is expected same - 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>10. Walk 50 feet with two turns</h3>
+            <input type="radio" name="q10" value="6"> Independent (6)<br>
+            <input type="radio" name="q10" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q10" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q10" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q10" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q10" value="1"> Dep (1)<br>
+            <input type="radio" name="q10" value="1"> 07/09/10/88 (1)<br>
+        </div>
+
+        <div>
+            <h3>11. Wheel 50 feet with two turns (x2)</h3>
+            <input type="radio" name="q11" value="6"> Independent (6)<br>
+            <input type="radio" name="q11" value="5"> Setup/Clean up (5)<br>
+            <input type="radio" name="q11" value="4"> Sup/Touch (4)<br>
+            <input type="radio" name="q11" value="3"> Partial/Mod (3)<br>
+            <input type="radio" name="q11" value="2"> Sub/Max (2)<br>
+            <input type="radio" name="q11" value="1"> Dep (1)<br>
+            <input type="radio" name="q11" value="1"> 07/09/10/88 (1)<br>
+        </div>
+    </div>
+
+    <button type="button" onclick="calculateScore()">Submit</button>
+    <button type="button" onclick="resetForm()">Clear</button>
+</form>
+
+<div id="result" class="result-container"></div>
+<div id="responses"></div>
+
+<!-- SMS Option -->
+<div class="sms-container" style="display:none;" id="smsSection">
+    <label for="phoneNumber">Enter your phone number to receive results via SMS:</label>
+    <input type="text" id="phoneNumber" placeholder="e.g., +1234567890" style="display: block; margin-top: 10px;">
+    <button type="button" onclick="prepareSMS()">Prepare SMS</button>
+    <p id="smsLinkContainer"></p>
+</div>
+
+<script>
+const questionsText = {
+    q1: "Eating",
+    q2: "Oral hygiene",
+    q3: "Toileting hygiene",
+    q4: "Roll left and right",
+    q5: "Lying to sitting on side of bed",
+    q6: "Sit to stand",
+    q7: "Chair/bed-to-chair transfer",
+    q8: "Toilet transfer",
+    q9: "Walk 10 feet",
+    q10: "Walk 50 feet with two turns",
+    q11: "Wheel 50 feet with two turns (x2)"
+};
+
+function calculateScore() {
+    const questionnaire = document.getElementById('questionnaire');
+    const residentDate = document.getElementById('residentDate').value;
+    let sum = 0;
+    let unansweredQuestions = [];
+
+    for (let i = 1; i <= 11; i++) {
+        if (!questionnaire["q" + i].value) {
+            unansweredQuestions.push(i);
+        }
+    }
+
+    if (unansweredQuestions.length > 0) {
+        alert("Please answer all questions before submitting.");
+        return;
+    }
+
+    let question9Value = parseInt(questionnaire.q9.value);
+    let question10Value = parseInt(questionnaire.q10.value);
+    let question11Value = parseInt(questionnaire.q11.value);
+
+    for (let i = 1; i <= 8; i++) {
+        sum += parseInt(questionnaire["q" + i].value);
+    }
+
+    if (!document.getElementById('q9_dcsame').checked) {
+        sum += question9Value + question10Value;
+    } else {
+        sum += question11Value * 2;
+    }
+
+    let resultText = `<h3>ADL Total Score: ${sum}</h3>`;
+    if (residentDate) {
+        resultText = `Resident/Date: ${residentDate}<br>` + resultText;
+    }
+    document.getElementById('result').innerHTML = resultText;
+    displayResponses();
+
+    // Show SMS section after score calculation
+    document.getElementById('smsSection').style.display = 'block';
+
+    // Scroll to the bottom of the page
+    setTimeout(() => {
+        window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+    }, 100);
+}
+
+function displayResponses() {
+    const questionnaire = document.getElementById('questionnaire');
+    let responsesHTML = "<h3>Chosen Responses:</h3><ul class='responses-list'>";
+
+    for (let i = 1; i <= 11; i++) {
+        let questionKey = "q" + i;
+        let selectedOption = Array.from(questionnaire[questionKey]).find(option => option.checked);
+
+        if (selectedOption) {
+            responsesHTML += `<li><span class="question-text">Question ${i}: ${questionsText[questionKey]}</span> <span class="response-text">- ${selectedOption.nextSibling.textContent.trim()}</span></li>`;
+        }
+    }
+
+    responsesHTML += "</ul>";
+    document.getElementById('responses').innerHTML = responsesHTML;
+}
+
+function resetForm() {
+    location.reload();
+}
+
+// Prepare SMS link
+function prepareSMS() {
+    const phoneNumber = document.getElementById('phoneNumber').value;
+    const resultText = document.getElementById('result').innerText;
+    const responsesText = document.getElementById('responses').innerText;
+
+    if (!phoneNumber) {
+        alert("Please enter a phone number.");
+        return;
+    }
+
+    const smsContent = encodeURIComponent(`${resultText}\n\n${responsesText}`);
+    const smsLink = `sms:${phoneNumber}?body=${smsContent}`;
+
+    document.getElementById('smsLinkContainer').innerHTML = `<a href="${smsLink}">Click here to send SMS</a>`;
+
+    // Scroll to the SMS link
+    setTimeout(() => {
+        document.getElementById('smsLinkContainer').scrollIntoView({ behavior: "smooth" });
+    }, 100);
+}
+</script>
+
+</body>
+</html>
